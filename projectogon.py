@@ -3,14 +3,19 @@ import torch.nn
 from skgeom import Polygon as SKPolygon, PolygonWithHoles
 from skgeom import Sign
 from skgeom import minkowski
+from skgeom import boolean_set
 from skgeom.draw import draw
-from sympy import Line2D, Point
+import skgeom
+from sympy import Line2D, Point, Segment2D
 from sympy.geometry.polygon import Polygon as SymPolygon
+from skgeom import simplify
+from matplotlib import pyplot
 
 relu = torch.nn.ReLU()
 
 epsilon = 0.1
 over_approximation = 0.0001 * epsilon
+simplification_count = 32
 
 
 def get_box(input_data, radius):
@@ -24,9 +29,10 @@ def get_box(input_data, radius):
 
 
 def plot_polygon(numpy_polygon):
-    return
-    draw(SKPolygon(numpy_polygon))
-    # pyplot.show()
+    sk_polygon = SKPolygon(numpy_polygon)
+    draw(sk_polygon)
+    print("simplicity", sk_polygon.is_simple())
+    pyplot.show()
 
 
 def input2projectogon(single_input, radius):
@@ -50,14 +56,23 @@ def forward_to_hidden_projectogon(projectogon, affine):
 def forward_one_output_polygon(affine, output_indices, projectogon):
     accumulation_polygon = None
     for projectogon_index, input_box in enumerate(projectogon):
+        if input_box is None:
+            continue
         i = projectogon_index * 2
-        plot_polygon(input_box)
+        # plot_polygon(input_box)
         sub_affine = torch.nn.Linear(2, 2, affine.bias is not None)
         with torch.no_grad():
             sub_affine.bias[:] = affine.bias[output_indices]
             sub_affine.weight[:] = affine.weight[output_indices, i: i + 2]
             after_affine = sub_affine(torch.FloatTensor(input_box))
+        # after_affine = thicken_if_needed(after_affine)
+        # if after_affine is None:
+        #     continue
         result_polygon = SKPolygon(after_affine)
+        if not result_polygon.is_simple():
+            result_polygon = SKPolygon(skgeom.convex_hull.graham_andrew(after_affine))
+            if result_polygon.orientation() == Sign.ZERO:
+                result_polygon = SKPolygon(thicken_if_needed(result_polygon.coords))
         if result_polygon.orientation() == Sign.NEGATIVE:
             result_polygon.reverse_orientation()
         if accumulation_polygon is None:
@@ -66,13 +81,39 @@ def forward_one_output_polygon(affine, output_indices, projectogon):
             accumulation_polygon = minkowski.minkowski_sum(accumulation_polygon,
                                                            result_polygon)  # type: PolygonWithHoles
             accumulation_polygon = accumulation_polygon.outer_boundary()  # type: SKPolygon
+            # TODO make simplify over-approximation
+            accumulation_polygon = simplify(accumulation_polygon, simplification_count, "count")
     after_affine = accumulation_polygon.coords
     augmented_polygon = augment_polygon_at_zero(after_affine)
     with torch.no_grad():
         after_relu_polygon = relu(augmented_polygon + over_approximation) - over_approximation
-        after_relu_polygon = SymPolygon(*after_relu_polygon).vertices
-    plot_polygon(after_relu_polygon)
+        after_relu_polygon = thicken_if_needed(after_relu_polygon)
     return after_relu_polygon
+
+
+def thicken_if_needed(after_relu_polygon):
+    supposedly_polygon = SymPolygon(*after_relu_polygon)
+    if isinstance(supposedly_polygon, SymPolygon):
+        after_relu_polygon = supposedly_polygon.vertices
+    elif isinstance(supposedly_polygon, Segment2D):
+        thickened = thicken(supposedly_polygon)
+        after_relu_polygon = thickened.vertices
+    else:
+        after_relu_polygon = None
+    return after_relu_polygon
+
+
+def thicken(supposedly_polygon):
+    points = [tuple(arg) for arg in supposedly_polygon.args]
+    for point in reversed(supposedly_polygon.args):
+        x, y = point.args
+        if abs(x) > abs(y):
+            y += over_approximation
+        else:
+            x += over_approximation
+        points.append((x, y))
+    thickened = SymPolygon(*points)
+    return thickened
 
 
 def augment_polygon_at_zero(after_affine):
@@ -122,5 +163,6 @@ def verify(single_input, single_label, linear_layers, radius=epsilon):
     projectogon = input2projectogon(single_input, radius)
     for layer in linear_layers[:-1]:
         projectogon = forward_to_hidden_projectogon(projectogon, layer)
+        print("done with one layer")
     projectogon = forward_to_logit_projectogon(projectogon, linear_layers[-1], single_label)
     return verify_logit_projectogon(projectogon)
