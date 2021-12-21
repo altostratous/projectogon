@@ -60,9 +60,8 @@ def forward_one_output_polygon(affine, output_indices, projectogon):
             continue
         i = projectogon_index * 2
         # plot_polygon(input_box)
-        sub_affine = torch.nn.Linear(2, 2, affine.bias is not None)
+        sub_affine = torch.nn.Linear(2, 2, False)
         with torch.no_grad():
-            sub_affine.bias[:] = affine.bias[output_indices]
             sub_affine.weight[:] = affine.weight[output_indices, i: i + 2]
             after_affine = sub_affine(torch.FloatTensor(input_box))
         # after_affine = thicken_if_needed(after_affine)
@@ -83,7 +82,8 @@ def forward_one_output_polygon(affine, output_indices, projectogon):
             accumulation_polygon = accumulation_polygon.outer_boundary()  # type: SKPolygon
             # TODO make simplify over-approximation
             accumulation_polygon = simplify(accumulation_polygon, simplification_count, "count")
-    after_affine = accumulation_polygon.coords
+    after_affine = torch.FloatTensor(accumulation_polygon.coords)
+    after_affine += affine.bias[output_indices]
     augmented_polygon = augment_polygon_at_zero(after_affine)
     with torch.no_grad():
         after_relu_polygon = relu(augmented_polygon + over_approximation) - over_approximation
@@ -140,6 +140,7 @@ def augment_polygon_at_zero(after_affine):
 
 
 def forward_to_logit_projectogon(projectogon, affine, single_label):
+    single_label = int(single_label)
     output_projectogon = []
     for j in range(affine.out_features):
         if j == single_label:
@@ -163,6 +164,5 @@ def verify(single_input, single_label, linear_layers, radius=epsilon):
     projectogon = input2projectogon(single_input, radius)
     for layer in linear_layers[:-1]:
         projectogon = forward_to_hidden_projectogon(projectogon, layer)
-        print("done with one layer")
     projectogon = forward_to_logit_projectogon(projectogon, linear_layers[-1], single_label)
     return verify_logit_projectogon(projectogon)
