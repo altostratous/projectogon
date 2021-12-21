@@ -1,0 +1,212 @@
+Image: 0	Status: Verified	Duration: 68.03809070587158
+1 1.0 1 1.0 1
+Image: 1	Status: Verified	Duration: 72.25586318969727
+2 1.0 2 1.0 2
+Image: 2	Status: Verified	Duration: 84.5932412147522
+3 1.0 3 1.0 3
+Image: 3	Status: Verified	Duration: 66.06038761138916
+4 1.0 4 1.0 4
+Image: 4	Status: Verified	Duration: 72.26377296447754
+5 1.0 5 1.0 5
+Image: 5	Status: Verified	Duration: 75.69802451133728
+6 1.0 6 1.0 6
+Image: 6	Status: Verified	Duration: 72.22505950927734
+7 1.0 7 1.0 7
+Image: 7	Status: Verified	Duration: 71.14031338691711
+8 1.0 8 1.0 8
+Image: 8	Status: Wrong	Duration: 71.14031338691711
+8 1.0 8 0.8888888888888888 9
+Image: 9	Status: Verified	Duration: 72.2890362739563
+9 1.0 9 0.9 10
+Image: 10	Status: Verified	Duration: 69.69456267356873
+10 1.0 10 0.9090909090909091 11
+Image: 11	Status: Verified	Duration: 69.18092036247253
+11 1.0 11 0.9166666666666666 12
+Image: 12	Status: Verified	Duration: 72.68482494354248
+12 1.0 12 0.9230769230769231 13
+Image: 13	Status: Verified	Duration: 66.87622499465942
+13 1.0 13 0.9285714285714286 14
+Image: 14	Status: Verified	Duration: 78.69970750808716
+14 1.0 14 0.9333333333333333 15
+Image: 15	Status: Verified	Duration: 73.32603073120117
+15 1.0 15 0.9375 16
+Image: 16	Status: Verified	Duration: 79.61484122276306
+16 1.0 16 0.9411764705882353 17
+Image: 17	Status: Verified	Duration: 69.56797647476196
+17 1.0 17 0.9444444444444444 18
+Image: 18	Status: Verified	Duration: 65.83463072776794
+18 1.0 18 0.9473684210526315 19
+Image: 19	Status: Verified	Duration: 76.0963842868805
+19 1.0 19 0.95 20
+Image: 20	Status: Verified	Duration: 72.16499447822571
+20 1.0 20 0.9523809523809523 21
+Image: 21	Status: Verified	Duration: 79.62452983856201
+21 1.0 21 0.9545454545454546 22
+Image: 22	Status: Verified	Duration: 65.12612080574036
+22 1.0 22 0.9565217391304348 23
+Image: 23	Status: Verified	Duration: 76.57284188270569
+23 1.0 23 0.9583333333333334 24
+Image: 24	Status: Verified	Duration: 69.85632705688477
+24 1.0 24 0.96 25
+Image: 25	Status: Verified	Duration: 67.74127078056335
+25 1.0 25 0.9615384615384616 26
+Image: 26	Status: Verified	Duration: 73.19863152503967
+26 1.0 26 0.9629629629629629 27
+Image: 27	Status: Verified	Duration: 74.15639066696167
+27 1.0 27 0.9642857142857143 28
+Image: 28	Status: Verified	Duration: 64.23445892333984
+28 1.0 28 0.9655172413793104 29
+Image: 29	Status: Verified	Duration: 72.60946154594421
+29 1.0 29 0.9666666666666667 30
+Image: 30	Status: Verified	Duration: 67.72176766395569
+30 1.0 30 0.967741935483871 31
+Image: 31	Status: Verified	Duration: 80.16056108474731
+31 1.0 31 0.96875 32
+Image: 32	Status: Verified	Duration: 66.56836152076721
+32 1.0 32 0.9696969696969697 33
+Image: 33	Status: Wrong	Duration: 66.56836152076721
+32 1.0 32 0.9411764705882353 34
+Image: 34	Status: Verified	Duration: 72.99581265449524
+33 1.0 33 0.9428571428571428 35
+Image: 35	Status: Verified	Duration: 79.31706881523132
+34 1.0 34 0.9444444444444444 36
+Image: 36	Status: Verified	Duration: 69.60572004318237
+35 1.0 35 0.9459459459459459 37
+Image: 37	Status: Verified	Duration: 71.57774567604065
+36 1.0 36 0.9473684210526315 38
+Image: 38	Status: Verified	Duration: 74.47583651542664
+37 1.0 37 0.9487179487179487 39
+Image: 39	Status: Verified	Duration: 76.09247064590454
+38 1.0 38 0.95 40
+Image: 40	Status: Verified	Duration: 82.223876953125
+39 1.0 39 0.9512195121951219 41
+Image: 41	Status: Verified	Duration: 75.8061912059784
+40 1.0 40 0.9523809523809523 42
+Image: 42	Status: Verified	Duration: 73.18964791297913
+41 1.0 41 0.9534883720930233 43
+Image: 43	Status: Verified	Duration: 79.33408713340759
+42 1.0 42 0.9545454545454546 44
+Image: 44	Status: Verified	Duration: 69.62667441368103
+43 1.0 43 0.9555555555555556 45
+Image: 45	Status: Verified	Duration: 70.51939558982849
+44 1.0 44 0.9565217391304348 46
+Image: 46	Status: Verified	Duration: 78.51314616203308
+45 1.0 45 0.9574468085106383 47
+Image: 47	Status: Verified	Duration: 87.32527232170105
+46 1.0 46 0.9583333333333334 48
+Image: 48	Status: Verified	Duration: 70.5032057762146
+47 1.0 47 0.9591836734693877 49
+Image: 49	Status: Verified	Duration: 70.20267963409424
+48 1.0 48 0.96 50
+Image: 50	Status: Verified	Duration: 76.84854030609131
+49 1.0 49 0.9607843137254902 51
+Image: 51	Status: Verified	Duration: 63.52940273284912
+50 1.0 50 0.9615384615384616 52
+Image: 52	Status: Verified	Duration: 75.52987027168274
+51 1.0 51 0.9622641509433962 53
+Image: 53	Status: Verified	Duration: 65.35959982872009
+52 1.0 52 0.9629629629629629 54
+Image: 54	Status: Verified	Duration: 71.64233589172363
+53 1.0 53 0.9636363636363636 55
+Image: 55	Status: Verified	Duration: 73.14742374420166
+54 1.0 54 0.9642857142857143 56
+Image: 56	Status: Verified	Duration: 69.57815337181091
+55 1.0 55 0.9649122807017544 57
+Image: 57	Status: Verified	Duration: 82.98793339729309
+56 1.0 56 0.9655172413793104 58
+Image: 58	Status: Verified	Duration: 70.5079915523529
+57 1.0 57 0.9661016949152542 59
+Image: 59	Status: Verified	Duration: 73.85741901397705
+58 1.0 58 0.9666666666666667 60
+Image: 60	Status: Verified	Duration: 66.28640985488892
+59 1.0 59 0.9672131147540983 61
+Image: 61	Status: Verified	Duration: 82.12803792953491
+60 1.0 60 0.967741935483871 62
+Image: 62	Status: Verified	Duration: 78.58416366577148
+61 1.0 61 0.9682539682539683 63
+Image: 63	Status: Verified	Duration: 76.2748191356659
+62 1.0 62 0.96875 64
+Image: 64	Status: Verified	Duration: 77.52492713928223
+63 1.0 63 0.9692307692307692 65
+Image: 65	Status: Correct	Duration: 64.22784757614136
+63 0.984375 64 0.9696969696969697 66
+Image: 66	Status: Verified	Duration: 71.42157411575317
+64 0.9846153846153847 65 0.9701492537313433 67
+Image: 67	Status: Verified	Duration: 71.30114436149597
+65 0.9848484848484849 66 0.9705882352941176 68
+Image: 68	Status: Verified	Duration: 65.76282787322998
+66 0.9850746268656716 67 0.9710144927536232 69
+Image: 69	Status: Verified	Duration: 64.16434955596924
+67 0.9852941176470589 68 0.9714285714285714 70
+Image: 70	Status: Verified	Duration: 68.43483591079712
+68 0.9855072463768116 69 0.971830985915493 71
+Image: 71	Status: Verified	Duration: 63.41228246688843
+69 0.9857142857142858 70 0.9722222222222222 72
+Image: 72	Status: Verified	Duration: 71.1527636051178
+70 0.9859154929577465 71 0.9726027397260274 73
+Image: 73	Status: Verified	Duration: 69.62833786010742
+71 0.9861111111111112 72 0.972972972972973 74
+Image: 74	Status: Verified	Duration: 75.11145448684692
+72 0.9863013698630136 73 0.9733333333333334 75
+Image: 75	Status: Verified	Duration: 66.59667563438416
+73 0.9864864864864865 74 0.9736842105263158 76
+Image: 76	Status: Verified	Duration: 70.33062171936035
+74 0.9866666666666667 75 0.974025974025974 77
+Image: 77	Status: Verified	Duration: 74.05033254623413
+75 0.9868421052631579 76 0.9743589743589743 78
+Image: 78	Status: Verified	Duration: 71.55124306678772
+76 0.987012987012987 77 0.9746835443037974 79
+Image: 79	Status: Verified	Duration: 65.60556864738464
+77 0.9871794871794872 78 0.975 80
+Image: 80	Status: Verified	Duration: 77.7589385509491
+78 0.9873417721518988 79 0.9753086419753086 81
+Image: 81	Status: Verified	Duration: 82.58463883399963
+79 0.9875 80 0.975609756097561 82
+Image: 82	Status: Verified	Duration: 79.74150609970093
+80 0.9876543209876543 81 0.9759036144578314 83
+Image: 83	Status: Verified	Duration: 76.38980054855347
+81 0.9878048780487805 82 0.9761904761904762 84
+Image: 84	Status: Verified	Duration: 69.06841969490051
+82 0.9879518072289156 83 0.9764705882352941 85
+Image: 85	Status: Verified	Duration: 69.25229287147522
+83 0.9880952380952381 84 0.9767441860465116 86
+Image: 86	Status: Verified	Duration: 64.48832750320435
+84 0.9882352941176471 85 0.9770114942528736 87
+Image: 87	Status: Verified	Duration: 67.13020014762878
+85 0.9883720930232558 86 0.9772727272727273 88
+Image: 88	Status: Verified	Duration: 70.0392792224884
+86 0.9885057471264368 87 0.9775280898876404 89
+Image: 89	Status: Verified	Duration: 81.25017285346985
+87 0.9886363636363636 88 0.9777777777777777 90
+Image: 90	Status: Verified	Duration: 67.51731729507446
+88 0.9887640449438202 89 0.978021978021978 91
+Traceback (most recent call last):
+  File "onx.py", line 34, in <module>
+    if projectogon.verify(x[0], y[0], [m for m in model.modules() if isinstance(m, torch.nn.Linear)],  epsilon):
+  File "/home/aasgarik/PycharmProjects/projectogon/projectogon.py", line 196, in verify
+    projectogon = forward_to_hidden_projectogon(projectogon, layer)
+  File "/home/aasgarik/PycharmProjects/projectogon/projectogon.py", line 53, in forward_to_hidden_projectogon
+    after_relu_polygon = forward_one_output_polygon(affine, output_indices, projectogon)
+  File "/home/aasgarik/PycharmProjects/projectogon/projectogon.py", line 91, in forward_one_output_polygon
+    after_relu_polygon = thicken_if_needed(after_relu_polygon)
+  File "/home/aasgarik/PycharmProjects/projectogon/projectogon.py", line 130, in thicken_if_needed
+    after_relu_polygon = thickened.vertices
+AttributeError: 'Segment2D' object has no attribute 'vertices'
+Image: 91	Status: Error	Duration: 51.44784212112427
+88 0.9777777777777777 90 0.9782608695652174 92
+Image: 92	Status: Correct	Duration: 66.1064703464508
+88 0.967032967032967 91 0.978494623655914 93
+Image: 93	Status: Verified	Duration: 61.76464533805847
+89 0.967391304347826 92 0.9787234042553191 94
+Image: 94	Status: Verified	Duration: 68.76739382743835
+90 0.967741935483871 93 0.9789473684210527 95
+Image: 95	Status: Verified	Duration: 63.86790943145752
+91 0.9680851063829787 94 0.9791666666666666 96
+Image: 96	Status: Verified	Duration: 72.90455532073975
+92 0.968421052631579 95 0.979381443298969 97
+Image: 97	Status: Verified	Duration: 63.01532316207886
+93 0.96875 96 0.9795918367346939 98
+Image: 98	Status: Verified	Duration: 72.3490161895752
+94 0.9690721649484536 97 0.9797979797979798 99
+Image: 99	Status: Verified	Duration: 67.75039720535278
+95 0.9693877551020408 98 0.98 100
