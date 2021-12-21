@@ -1,6 +1,8 @@
 import csv
 import os
+import sys
 import time
+import traceback
 
 import onnx
 import torch.utils.data
@@ -20,8 +22,6 @@ correct = 0
 verified = 0
 error = 0
 for i, test in enumerate(tests):
-    if i < 39:
-        continue
     x = torch.FloatTensor([[int(j) for j in test[1:len(test)]]]) / 255
     y = torch.LongTensor([int(test[0])])
     output = model(x)
@@ -33,7 +33,8 @@ for i, test in enumerate(tests):
         try:
             if projectogon.verify(x[0], y[0], [m for m in model.modules() if isinstance(m, torch.nn.Linear)],  epsilon):
                 current_verified = 1
-        except:
+        except Exception as e:
+            traceback.print_exc(file=sys.stdout)
             current_error = 1
         duration = time.time() - start
 
@@ -51,3 +52,4 @@ for i, test in enumerate(tests):
     print("Image: {}\tStatus: {}\tDuration: {}".format(i, status, duration))
     total += y.nelement()
     print(verified, verified / correct, correct, correct / total, total)
+    sys.stdout.flush()
