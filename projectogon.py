@@ -175,7 +175,7 @@ def forward_to_logit_projectogon(projectogon, affine, single_label):
         if j == single_label:
             continue
         output_indices = [single_label, j]
-        after_relu_polygon = forward_one_output_polygon(affine, output_indices, projectogon, True)
+        after_relu_polygon = forward_one_output_polygon(affine, output_indices, projectogon, False)
         output_projectogon.append(after_relu_polygon)
     return output_projectogon
 
@@ -194,6 +194,6 @@ def verify(single_input, single_label, linear_layers, radius=epsilon):
     projectogon = input2projectogon(single_input, radius)
     for layer in linear_layers[:-1]:
         projectogon = forward_to_hidden_projectogon(projectogon, layer)
-        print('done with one layer')
+        # print('done with one layer')
     projectogon = forward_to_logit_projectogon(projectogon, linear_layers[-1], single_label)
     return verify_logit_projectogon(projectogon)
