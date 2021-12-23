@@ -116,7 +116,7 @@ def reduce_minkowski(a, b):
         return a
     accumulation_polygon = minkowski.minkowski_sum(a, b)  # type: PolygonWithHoles
     accumulation_polygon = accumulation_polygon.outer_boundary()  # type: SKPolygon
-    # TODO make simplify over-approximation
+    # TODO make sure simplify over-approximates
     accumulation_polygon = simplify(accumulation_polygon, simplification_count, "count")
     return accumulation_polygon
 
